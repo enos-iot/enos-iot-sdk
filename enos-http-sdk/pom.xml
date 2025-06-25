@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.enos-iot</groupId>
+        <artifactId>enos-iot-sdk-parent</artifactId>
+        <version>2.5.1</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>enos-http</artifactId>
+    <version>2.5.1</version>
+    <packaging>jar</packaging>
+
+    <name>EnOS IoT SDK for HTTP</name>
+    <inceptionYear>2018</inceptionYear>
+    <url>https://github.com/enos-iot/enos-device-sdk-java</url>
+
+    <description>EnOS Device SDK For Java (HTTP)</description>
+    <!-- Version History -->
+    <!-- 
+        0.1.1 Initial Release
+        0.1.3 Refactored to share common codes with HTTP integration
+        0.1.4 support to download or delete file
+        0.1.7 support OTA, support file upload/download via EnOS LARK
+        0.1.8 2.2 GA fix some log and sample
+        0.1.9 support ssl for http auth
+        0.2.0 support ssl for http auth file download by range
+    -->
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <properties>
+        <!-- Build args -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- for compiler plugin -->
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <java_source_version>1.8</java_source_version>
+        <java_target_version>1.8</java_target_version>
+        <file_encoding>UTF-8</file_encoding>
+        <dir>target</dir>
+        <res_dir>src/main/resources</res_dir>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.enos-iot</groupId>
+            <artifactId>enos-core</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.2.0.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
