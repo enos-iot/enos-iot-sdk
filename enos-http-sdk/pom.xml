@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.enos-iot</groupId>
         <artifactId>enos-iot-sdk-parent</artifactId>
-        <version>2.5.1</version>
+        <version>2.5.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>enos-http</artifactId>
-    <version>2.5.1</version>
+    <version>2.5.2</version>
     <packaging>jar</packaging>
 
     <name>EnOS IoT SDK for HTTP</name>
@@ -19,7 +19,7 @@
 
     <description>EnOS Device SDK For Java (HTTP)</description>
     <!-- Version History -->
-    <!-- 
+    <!--
         0.1.1 Initial Release
         0.1.3 Refactored to share common codes with HTTP integration
         0.1.4 support to download or delete file
@@ -27,6 +27,7 @@
         0.1.8 2.2 GA fix some log and sample
         0.1.9 support ssl for http auth
         0.2.0 support ssl for http auth file download by range
+        2.5.2 fix black duck and fortify problem
     -->
 
     <build>
@@ -57,7 +58,7 @@
         <dependency>
             <groupId>com.enos-iot</groupId>
             <artifactId>enos-core</artifactId>
-            <version>2.5.1</version>
+            <version>2.5.2</version>
         </dependency>
 
         <dependency>
@@ -69,9 +70,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.2.0.RELEASE</version>
+            <version>2.7.18</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.yaml</groupId>
+                    <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

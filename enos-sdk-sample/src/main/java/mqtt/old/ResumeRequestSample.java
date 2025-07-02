@@ -14,11 +14,12 @@ import com.enosiot.enos.iot_mqtt_sdk.message.upstream.status.SubDeviceLoginRespo
 import com.google.common.collect.ImmutableMap;
 import mqtt.old.helper.Helper;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class ResumeRequestSample {
 
-    private final static Random RANDOM = new Random();
+    private final static SecureRandom RANDOM = new SecureRandom();
 
     private static MeasurepointResumeRequest buildRequest(final DeviceCredential subDev, String floatMpName) {
         return MeasurepointResumeRequest.builder()
@@ -42,7 +43,7 @@ public class ResumeRequestSample {
     }
 
     private static void resumeBatchMeasurePoints(final MqttClient client, final DeviceCredential subDev) {
-        final Random rand = new Random();
+        final SecureRandom rand = new SecureRandom();
 
         MeasurepointResumeBatchRequest request = MeasurepointResumeBatchRequest.builder()
                 .addRequest(buildRequest(subDev, "value"))

@@ -20,6 +20,7 @@ import mqtt.old.helper.Helper;
 
 import static mqtt.old.helper.Helper.*;
 
+import java.security.SecureRandom;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -136,7 +137,7 @@ public class SubDeviceSample {
     }
 
     private static void publishMeasurePointsFor(final MqttClient client, List<DeviceCredential> subDevices) {
-        final Random rand = new Random();
+        final SecureRandom rand = new SecureRandom();
         List<MeasurepointPostRequest> requests =
                 subDevices.stream().map(dev ->
                         MeasurepointPostRequest.builder()

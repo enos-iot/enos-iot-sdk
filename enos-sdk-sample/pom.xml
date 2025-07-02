@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.enos-iot</groupId>
         <artifactId>enos-iot-sdk-parent</artifactId>
-        <version>2.5.1</version>
+        <version>2.5.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>enos-samples</artifactId>
-    <version>2.5.1</version>
+    <version>2.5.2</version>
     <packaging>jar</packaging>
 
     <name>EnOS IoT SDK Samples</name>
@@ -38,28 +38,28 @@
         <dependency>
             <groupId>com.enos-iot</groupId>
             <artifactId>enos-http</artifactId>
-            <version>2.5.1</version>
+            <version>2.5.2</version>
         </dependency>
         <dependency>
             <groupId>com.enos-iot</groupId>
             <artifactId>enos-mqtt</artifactId>
-            <version>2.5.1</version>
+            <version>2.5.2</version>
         </dependency>
         <dependency>
             <groupId>com.enos-iot</groupId>
             <artifactId>enos-core</artifactId>
-            <version>2.5.1</version>
+            <version>2.5.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.16.0</version>
+            <version>2.25.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.16.0</version>
+            <version>2.25.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

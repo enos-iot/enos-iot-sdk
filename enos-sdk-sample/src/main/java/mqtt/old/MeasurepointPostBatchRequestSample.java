@@ -15,10 +15,10 @@ import com.enosiot.enos.iot_mqtt_sdk.message.upstream.tsl.MeasurepointPostReques
 import com.google.common.collect.ImmutableMap;
 import mqtt.old.helper.BaseConnectCallback;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import static mqtt.old.helper.Helper.*;
 
@@ -29,7 +29,7 @@ import static mqtt.old.helper.Helper.*;
  * @author jian.zhang4
  */
 public class MeasurepointPostBatchRequestSample {
-    final static Random rand = new Random();
+    final static SecureRandom rand = new SecureRandom();
     final static MqttClient CLIENT = new MqttClient(new DefaultProfile(
             new NormalDeviceLoginInput(SERVER_URL, GW_PRODUCT_KEY, GW_DEV_KEY, GW_DEV_SECRET)
     ));

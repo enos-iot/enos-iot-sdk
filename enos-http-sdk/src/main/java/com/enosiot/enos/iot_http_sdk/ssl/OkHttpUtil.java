@@ -73,7 +73,7 @@ public class OkHttpUtil {
 
         X509TrustManager trustManagerVerifyCa = (X509TrustManager) trustManagers[0];
         // TSL or SSL
-        SSLContext sslContext = SSLContext.getInstance("TLS");
+        SSLContext sslContext = SSLContext.getInstance("TLSv1.3");
 
         TrustManager[] trustAllCerts = new TrustManager[] {
                 new X509TrustManager() {
@@ -117,7 +117,7 @@ public class OkHttpUtil {
                 return new X509Certificate[0];
             }
         };
-        SSLContext sslContext = SSLContext.getInstance("TLS");
+        SSLContext sslContext = SSLContext.getInstance("TLSv1.3");
         sslContext.init(null, new TrustManager[]{trustManager}, new SecureRandom());
         SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
 
