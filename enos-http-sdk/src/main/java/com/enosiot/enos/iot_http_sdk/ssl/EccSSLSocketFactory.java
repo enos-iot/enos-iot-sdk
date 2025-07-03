@@ -24,11 +24,7 @@ public class EccSSLSocketFactory extends SSLSocketFactory {
             "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
             "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
             "TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384",
-            "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256",
-            "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
-            "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384",
-            "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
-            "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256"
+            "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256"
     };
 
     private final String[] cipherSuites;
@@ -37,7 +33,7 @@ public class EccSSLSocketFactory extends SSLSocketFactory {
 
     private Boolean isEccConnect;
 
-    EccSSLSocketFactory(SSLSocketFactory factory,  Boolean isEccConnect) {
+    EccSSLSocketFactory(SSLSocketFactory factory, Boolean isEccConnect) {
         this.factory = factory;
         this.isEccConnect = isEccConnect;
         this.cipherSuites = Boolean.TRUE.equals(isEccConnect)

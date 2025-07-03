@@ -22,8 +22,8 @@ import com.enosiot.enos.iot_mqtt_sdk.util.Pair;
 import com.enosiot.enos.iot_mqtt_sdk.util.StringI18n;
 import com.google.common.collect.Lists;
 
+import java.security.SecureRandom;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @author zhensheng.cai
@@ -222,11 +222,11 @@ public class SimpleSendReceive {
 
         TagUpdateRequest request = TagUpdateRequest.builder()
                 .addTag("test_tag",
-                        "new_tag" + new Random().nextInt(100))
+                        "new_tag" + new SecureRandom().nextInt(100))
 //                .addTag("test_tag2",
-//                        "new_tag" + new Random().nextInt(100))
+//                        "new_tag" + new SecureRandom().nextInt(100))
                 .build();
-        request.setMessageId("test" + new Random().nextInt(1000));
+        request.setMessageId("test" + new SecureRandom().nextInt(1000));
         System.out.println("start update tag ... " + request.getMessageId());
 
         try {
@@ -244,9 +244,9 @@ public class SimpleSendReceive {
                 .setProductKey(subProductKey)
                 .setDeviceKey(subDeviceKey)
                 .addTag("test_tag",
-                        "new_tag" + new Random().nextInt(100))
+                        "new_tag" + new SecureRandom().nextInt(100))
                 .addTag("test_tag2",
-                        "new_tag" + new Random().nextInt(100)).build();
+                        "new_tag" + new SecureRandom().nextInt(100)).build();
 
         try {
             TagUpdateResponse rsp = client.publish(request);
@@ -322,7 +322,7 @@ public class SimpleSendReceive {
                 .setSubDeviceInfo(subProductKey, subDeviceKey, subDeviceSecret).build();
         SubDeviceLoginResponse rsp = null;
 
-        request.setMessageId("test" + new Random().nextInt(1000));
+        request.setMessageId("test" + new SecureRandom().nextInt(1000));
         System.out.println("start login sub-device " + request.getQos() + "+" + request.getMessageId() + " , current status : " + client.isConnected());
 
         try {
@@ -441,7 +441,7 @@ public class SimpleSendReceive {
 
 
     public static void postMeasurepoint() {
-        Random random = new Random();
+        SecureRandom random = new SecureRandom();
         System.out.println("start post measurepoint ...");
         MeasurepointPostRequest request = MeasurepointPostRequest.builder()
                 .addMeasurePoint("point1", random.nextInt(100)).build();
@@ -453,7 +453,7 @@ public class SimpleSendReceive {
     }
 
     public static void postSubMeasurepoint() {
-        Random random = new Random();
+        SecureRandom random = new SecureRandom();
         System.out.println("start post sub device measurepoint ...");
         MeasurepointPostRequest request = MeasurepointPostRequest.builder()
                 .setProductKey(subProductKey).setDeviceKey(subDeviceKey)
@@ -470,7 +470,7 @@ public class SimpleSendReceive {
     }
 
     public static void postSyncMeasurepoint() {
-        Random random = new Random();
+        SecureRandom random = new SecureRandom();
         System.out.println("start post measurepoint ...");
         MeasurepointPostRequest request = MeasurepointPostRequest.builder()
                 .addMeasurePoint("Int_value", random.nextInt(100)).build();
@@ -484,7 +484,7 @@ public class SimpleSendReceive {
     }
 
     public static void fastpostMeasurepoint() {
-        Random random = new Random();
+        SecureRandom random = new SecureRandom();
         System.out.println("start post measurepoint ...");
         MeasurepointPostRequest request = MeasurepointPostRequest.builder()
                 .addMeasurePoint("reverseFlowAlarmThreshold", random.nextInt(100)).build();
@@ -562,7 +562,7 @@ public class SimpleSendReceive {
         });
     }
 
-    private static Random random = new Random();
+    private static SecureRandom random = new SecureRandom();
     private static int idInc = 20;
 
     private static byte[] getPayload() {

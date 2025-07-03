@@ -11,9 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import mqtt.old.helper.BaseConnectCallback;
 import mqtt.old.helper.Helper;
 
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 @Slf4j
 public class SubDeviceBatchLoginSample {
@@ -75,17 +75,17 @@ public class SubDeviceBatchLoginSample {
                                 .setProductKey(result.productKey)
                                 .setDeviceKey(result.deviceKey)
 //                                .addMeasurePoints(ImmutableMap.of(
-//                                        "temp", new Random().nextDouble(),
+//                                        "temp", new SecureRandom().nextDouble(),
 //                                        "timestamp", System.currentTimeMillis(),
-//                                        "value", new Random().nextInt(10000),
+//                                        "value", new SecureRandom().nextInt(10000),
 //                                        "invalidMp", 200
 //                                ))
                                 .setQos(0);
 
                         Map<String, Object> measurepoints = new HashMap<>(measurepointNum * 3);
                         for (int k = 0; k < measurepointNum; ++k) {
-                            measurepoints.put("int" + k, new Random().nextInt(10000));
-                            measurepoints.put("float" + k, new Random().nextFloat());
+                            measurepoints.put("int" + k, new SecureRandom().nextInt(10000));
+                            measurepoints.put("float" + k, new SecureRandom().nextFloat());
                             measurepoints.put("string" + k, "s" + k);
                         }
 

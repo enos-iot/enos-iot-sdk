@@ -16,6 +16,7 @@ import com.google.common.collect.ImmutableMap;
 import lombok.extern.slf4j.Slf4j;
 import mqtt.old.helper.Helper;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 @Slf4j
@@ -124,8 +125,8 @@ public class GwGroupSample {
                 .setProductKey(SUB_DEV01_PK)
                 .setDeviceKey(SUB_DEV01_DK)
                 .setMeasurePoints(ImmutableMap.of(
-                        "value", new Random().nextDouble(),
-                        "temp", new Random().nextDouble()
+                        "value", new SecureRandom().nextDouble(),
+                        "temp", new SecureRandom().nextDouble()
                 ))
                 .build();
     }
